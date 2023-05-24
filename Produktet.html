@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+<meta name="viewport" content="width-device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/shop.css">
+
+<link rel="icon" type="image/png" href="images/star-logo.png" />
+<title>Stellar Smartphone, Tv, Notebook</title>
+
+
+<body>
+  <div class="sub-header">
+    <div class="language-switcher">
+      <ul>
+        <li>
+          <button onclick="">
+            <a href="Index.html">EN</a>
+          </button>
+        </li>
+        <li>
+          <button onclick="">
+            <a href="Index.html">AL</a>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="logo">
+      <a href="Index.html">
+        <img src="images/star-logo.png">
+        <div class="name-logo">
+          <p>Stellar</p>
+        </div>
+      </a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Kerko per produktin..." id="search-input" />
+      <button onclick="" class="search-button">
+        <img src="images/search.png" alt="Search" />
+      </button>
+    </div>
+  </div>
+  <header>
+    <nav class="checkbox">
+      <ul>
+        <li class="dropdown">
+          <a href="Produktet.html">Produktet</a>
+          <div class="dropdown-content">
+            <a href="Produktet.html?kategoria=Kompjuter">Kompjuter</a>
+            <a href="Produktet.html?kategoria=Laptop">Laptop</a>
+            <a href="Produktet.html?kategoria=Smartphone">Smartphone</a>
+            <a href="Produktet.html?kategoria=Aksesore">Aksesore</a>
+            <a href="Produktet.html?kategoria=Televizor">Televizor</a>
+            <a href="#">ElektroShtepiake</a>
+            <a href="#">Argetim</a>
+            <a href="#">Foto dhe Video</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Sherbime</a>
+          <div class="dropdown-contenti">
+            <a href="#">Transport Dhe Dorezim Ne banese</a>
+            <a href="#">Transport Deri Ne Adresen e Klientit</a>
+            <a href="#">Paketa Komfort Per Telefon, Tablet, Laptop</a>
+            <a href="#">Nderrim I Menjehershem: Kujdesi Personal</a>
+            <a href="#">Montime</a>
+            <a href="#">Asistence Teknike</a>
+            <a href="#">Riparime</a>
+          </div>
+        </li>
+        <li><a href="#">Menyra Pagese</a></li>
+        <li><a href="#">Lajme</a></li>
+        <li><a href="#">Rreth Nesh</a></li>
+        <li><a href="#">Servisi</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+
+
+  <!-- <div id="shporta"></div>
+  <h4>Shporta</h4>
+  <p id="cmimiTotal"></p>
+  <ul id="produktetNeShporte"></ul>
+  </div>
+*/-->
+
+  <table>
+    <tr>
+      <td>
+        <div id="kerko">
+          <h3 id="kategori-titull">Produktet - </h3>
+          <div id="kategori"></div>
+          <p>Kerko produkt</p>
+          <input type="text" id="searchBar">
+          <!-- searchNewTab() for other places-->
+          <button id="searchButton" onclick="searchAndShow()">Kerko</button>
+          <input type="number" id="minPriceInput" min="0" max="100000" value="0" step="100">
+          <input type="number" id="maxPriceInput" min="0" max="100000" value="10000" step="100">
+          <button id="filterButton" onclick="filterProductsByPrice()">Filtro</button>
+          <button id="filterButton" onclick="removeFilters()">Hiq filtrat</button>
+        </div>
+      </td>
+      <td>
+        <div id="shop">
+          <div id="filtering">
+
+            <div id="list-produktesh"></div>
+          </div>
+      </td>
+    </tr>
+  </table>
+
+  <script src="shop.js"></script>
+  <script>
+
+    loadItAll(); // Not needed in other than shopping
+    loadShportaFromLocalStorage();
+
+    function filterProducts(minPrice, maxPrice) {
+      let produkteTeFiltruara = [];
+      for (let i = 0; i < produkte.length; i++) {
+        if (produkte[i].price >= minPrice && produkte[i].price <= maxPrice)
+          produkteTeFiltruara.push(produkte[i]);
+      }
+      return produkteTeFiltruara;
+    }
+    function filterProductsByPrice() {
+      //urlParams
+      const minPrice = parseInt(document.getElementById('minPriceInput').value);
+      const maxPrice = parseInt(document.getElementById('maxPriceInput').value);
+
+      const filteredProducts = filterProducts(minPrice, maxPrice);
+      showProducts(filteredProducts);
+    }
+
+    function removeFilters() {
+      showProducts(produkte); // or results from search
+    };
+
+    const container = document.querySelector(".container");
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > container.offsetTop + 70) {
+        header.classList.add("fixed");
+      } else {
+        header.classList.remove("fixed");
+      }
+    });
+
+
+  </script>
+
+</body>
+
+</html>

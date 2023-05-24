@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE-edge" />
+<meta name="viewport" content="width-device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+
+<link rel="icon" type="image/png" href="images/star-logo.png" />
+<title>Stellar Smartphone, Tv, Notebook</title>
+<style></style>
+
+<body>
+  <div class="sub-header">
+    <div class="language-switcher">
+      <ul>
+        <li>
+          <button onclick="">
+            <a href="Index.html">EN</a>
+          </button>
+        </li>
+        <li>
+          <button onclick="">
+            <a href="Index.html">AL</a>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="logo">
+      <img src="images/star-logo.png" />
+      <div class="name-logo">
+        <p>Stellar</p>
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Kerko per produktin..." id="search-input" />
+      <button onclick="" class="search-button">
+        <img src="images/search.png" alt="Search" />
+      </button>
+    </div>
+  </div>
+  <header>
+    <nav class="checkbox">
+      <ul>
+        <li class="dropdown">
+          <a href="Produktet.html">Produktet</a>
+          <div class="dropdown-content">
+            <a href="Produktet.html?kategoria=Kompjuter">Kompjuter</a>
+            <a href="Produktet.html?kategoria=Laptop">Laptop</a>
+            <a href="Produktet.html?kategoria=Smartphone">Smartphone</a>
+            <a href="Produktet.html?kategoria=Aksesore">Aksesore</a>
+            <a href="Produktet.html?kategoria=Televizor">Televizor</a>
+            <a href="#">ElektroShtepiake</a>
+            <a href="#">Argetim</a>
+            <a href="#">Foto dhe Video</a>
+          </div>
+        </li>
+        <li class="dropdown">
+          <a href="#">Sherbime</a>
+          <div class="dropdown-contenti">
+            <a href="#">Transport Dhe Dorezim Ne banese</a>
+            <a href="#">Transport Deri Ne Adresen e Klientit</a>
+            <a href="#">Paketa Komfort Per Telefon, Tablet, Laptop</a>
+            <a href="#">Nderrim I Menjehershem: Kujdesi Personal</a>
+            <a href="#">Montime</a>
+            <a href="#">Asistence Teknike</a>
+            <a href="#">Riparime</a>
+          </div>
+        </li>
+        <li><a href="#">Menyra Pagese</a></li>
+        <li><a href="#">Lajme</a></li>
+        <li><a href="#">Rreth Nesh</a></li>
+        <li><a href="#">Servisi</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="fotoja3">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="images/swiper3.jpg"></div>
+        <div class="swiper-slide"><img src="images/swiper2.jpg"></div>
+        <div class="swiper-slide"><img src="images/playstation.jpg"></div>
+        <div class="swiper-slide"><img src="images/swiper10.jpg"></div>
+        <div class="swiper-slide"><img src="images/swiper18.jpg"></div>
+        <div class="swiper-slide"><img src="images/swiper12.jpg"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+    </div>
+  </div>
+  <img src="images/swiper1.jpg" style="margin-top:90px;">
+
+  <!--<link rel="stylesheet" href="css/styles.css">  -->
+
+  <!--footer-section-->
+
+
+  <div class="footer">
+    <div class="footer-content">
+
+
+      <div class="footer-section social-media">
+        <h3>Rrjete sociale</h3>
+        <ul class="social-menu">
+          <li><a href="https://facebook.com/"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://instagram.com/"><i class="fab fa-instagram"></i> </a></li>
+          <li><a href="https://youtube.com/"><i class="fab fa-youtube"></i> </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+
+  const container = document.querySelector(".container");
+  const header = document.querySelector("header");
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > container.offsetTop + 70) {
+      header.classList.add("fixed");
+    } else {
+      header.classList.remove("fixed");
+    }
+  });
+
+
+  const swiper = new Swiper('.swiper', {
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    loop: true,
+
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+
+  });
+</script>
+
+</html>
