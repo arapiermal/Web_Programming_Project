@@ -1,0 +1,52 @@
+[
+  {
+    "name": "HP 09HY67 Desktop Computer",
+    "id": 1000,
+    "price": 10000
+  },
+  {
+    "id": 1001,
+    "name": "Lenovo Desktop Computer",
+    "price": 15000
+  },
+  {
+    "id": 1002,
+    "name": "LG Monitor",
+    "price": 80000
+  },
+  {
+    "id": 1003,
+    "name": "PC HP 29G4 MT 23H44EA",
+    "price": 85000
+  },
+  {
+    "id": 1004,
+    "name": "PC HP 29G4 MT 23H44EA",
+    "price": 85000
+  },
+  {
+    "id": 1005,
+    "name": "PC HP 29G4 MT 23H44EA",
+    "price": 85000
+  },
+  {
+    "id": 1006,
+    "name": "PC HP 29G4 MT 23H44EA",
+    "price": 85000
+  },
+  {
+    "id": 1007,
+    "name": "PC HP 29G4 MT 23H44EA",
+    "price": 85000
+  },
+  {
+    "id": 1008,
+    "name": "PC HP 29G4 MT 23H44EA",
+    "price": 85000
+  },
+  {
+    "id": 1009,
+    "name": "PC HP 29G4 MT 23H44EA",
+    "price": 85000
+  }
+]

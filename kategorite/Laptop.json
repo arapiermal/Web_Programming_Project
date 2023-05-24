@@ -1,0 +1,17 @@
+[
+  {
+    "id": 2000,
+    "name": "MacBook Air 13.6 2022 M2",
+    "price": 145200
+  },
+  {
+    "id": 2001,
+    "name": "Apple Mac Book Pro 13 2020 M1",
+    "price": 144200
+  },
+  {
+    "id": 2007,
+    "name": "Apple Mac Book 13 2020 M1",
+    "price": 97500
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 5000,
+    "name": "Samsung TV 8k",
+    "price": 80000
+  },
+  {
+    "id": 5001,
+    "name": "LG TV 4k",
+    "price": 90000
+  }
+]

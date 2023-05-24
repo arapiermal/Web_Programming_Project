@@ -1,0 +1,12 @@
+[
+  {
+    "id": 4000,
+    "name": "AirPods 2",
+    "price": 10000
+  },
+  {
+    "id": 4001,
+    "name": "AirPods 3",
+    "price": 20700
+  }
+]
