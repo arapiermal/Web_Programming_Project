@@ -1,12 +1,12 @@
 [
   {
-    "name": "HP 09HY67 Desktop Computer",
+    "name": "HP Desktop Computer",
     "id": 1000,
     "price": 10000
   },
   {
     "id": 1001,
-    "name": "Lenovo Desktop Computer",
+    "name": "Lenovo Desktop CH19",
     "price": 15000
   },
   {

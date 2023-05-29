@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="shop.css">
+    <style>
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .form-row label {
+            margin-left: 8px;
+            font-weight: bold;
+            margin-bottom: -5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[list],
+        input[type="checkbox"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[list] {
+            height: 38px;
+        }
+
+        input[type="checkbox"] {
+            display: inline-block;
+            width: auto;
+            margin-bottom: 0;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="shporta">
+        <h4>Shporta</h4>
+        <ul id="produktetNeShporte"></ul>
+        <p id="cmimiTotal"></p>
+    </div>
+    <form id="porositja" action="https://getform.io/f/608382bd-ecac-4259-8295-e98871be98c0" method="POST">
+        <label for="adresa">Emer Mbiemer</label>
+        <input type="text" name="Emer Mbiemer" id="Emer Mbiemer" placeholder="Filan Fisteku" required>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="filanfisteku@mail.com" required>
+        <label for="nrtel">Numer Telefoni</label>
+        <input type="tel" name="nrtel" id="nrtel" placeholder="+355 69 123 4567" required>
+        <label for="qyteti">Qyteti</label>
+        <input list="qytete" id="qyteti" name="qyteti" required>
+        <datalist id="qytete">
+            <option value="Tirana"></option>
+            <option value="Elbasan"></option>
+            <option value="Durres"></option>
+            <option value="Berat"></option>
+            <option value="Korce"></option>
+            <option value="Vlore"></option>
+            <option value="Sarande"></option>
+            <option value="Lezhe"></option>
+        </datalist>
+        <label for="adresa">Adresa</label>
+        <input type="text" name="adresa" id="adresa" placeholder="Rruga Ali Bakiu" required>
+        <a href="kushtet.html" target="_blank">Kushtet</a>
+        <div class="form-row">
+            <input type="checkbox" id="pranoj" name="pranoj" value="kushtet">
+            <label for="pranoj">Pranoj kushtet kontraktuale</label>
+        </div>
+
+        <input type="hidden" name="shporta" id="shporta-input">
+        <!-- ERROR HERE-->
+        <input type="submit" value="Bli" onclick="pergatitFormen()">
+    </form>
+    <script src="shop.js"></script>
+    <script>
+        loadShportaFromLocalStorage();
+        if (shporta.length === 0) {
+            document.getElementById('porositja').innerHTML = 'Shporta bosh';
+        }
+        function pergatitFormen() {
+            if (document.getElementById("pranoj").value != "on") {
+                alert("Nuk keni pranuar kushtet");
+                return;
+            } else {
+
+                const shportaData = JSON.stringify(shporta);
+                document.getElementById('shporta-input').value = shportaData;
+                document.getElementById('myForm').submit();
+            }
+        }
+    </script>
+</body>
+
+</html>

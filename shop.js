@@ -45,9 +45,11 @@ function loadAllProducts() {
             console.error('Error:', error);
         });
 }
-
 function searchProducts(query) {
-    document.getElementById('kategori-titull').innerHTML = 'Kerkim - ' + query;
+    if (query != "")
+        document.getElementById('kategori-titull').innerHTML = 'Kerkim - ' + query;
+    else
+        document.getElementById('kategori-titull').innerHTML = 'Te gjitha produktet';
     const searchQuery = query.toLowerCase();
     const results = gjitheProduktet.filter(product => {
         const productName = product.name.toLowerCase();
@@ -77,13 +79,22 @@ function searchNewTab(kerkimi) {
     loadAllProducts()
         .then(() => {
             const results = searchProducts(kerkimi);
-            showProducts(results);
+            if (results.length > 0)
+                showProducts(results);
+            else
+                skaRezultate();
         })
         .catch(error => {
             console.error('Error:', error);
         });
 }
+function skaRezultate() {
+    const pList = document.getElementById('list-produktesh');
 
+    //fshirje
+    pList.innerHTML = '<br><h3>Nuk ka rezultate</h3>';
+
+}
 function showProducts(produkte) {
     const pList = document.getElementById('list-produktesh');
 
@@ -113,8 +124,8 @@ function showProducts(produkte) {
         pName.textContent = produkt.name;
         pContainer.appendChild(pName);
 
-        const pPrice = document.createElement('p');
-        pPrice.textContent = 'Cmimi ' + produkt.price + ' Lek';
+        const pPrice = document.createElement('p1');
+        pPrice.textContent = produkt.price + ' Leke';
         pContainer.appendChild(pPrice);
 
         const pbDiv = document.createElement('div');
@@ -130,8 +141,14 @@ function showProducts(produkte) {
         pbDiv.appendChild(linkButton);
 
         const addButton = document.createElement('button');
-        addButton.textContent = 'Shto ne shporte';
+        addButton.textContent = 'Shto ';
         addButton.classList.add('shtoNeShporte');
+        const iconElement = document.createElement('i');
+        iconElement.classList.add('fa', 'fa-shopping-cart');
+
+        // Append the icon to the addButton
+        addButton.appendChild(iconElement);
+
         addButton.setAttribute('data-id', produkt.id); // Attach the id as a data attribute
         addButton.addEventListener('click', () => {
             shtoNeShporte(produkt.id);
@@ -177,6 +194,7 @@ function loadItAll() {
         const category = urlParams.get('kategoria');
         if (category === "Kerkim") {
             categoryTitle.textContent += ' e kerkuara';
+            ///
         } else if (categories.includes(category)) {
             categoryTitle.textContent += category;
             loadProducts(category)

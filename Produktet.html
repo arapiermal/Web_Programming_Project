@@ -4,7 +4,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE-edge" />
 <meta name="viewport" content="width-device-width, initial-scale=1.0" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-<link rel="stylesheet" href="css/style.css">
+<!--- Favicon ----->
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/payment_icons/dc_payment_icons.css" />
+
+
+<!--- Font awesome ------>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/shop.css">
 
 <link rel="icon" type="image/png" href="images/star-logo.png" />
@@ -40,7 +51,7 @@
     </div>
     <div class="search-bar">
       <input type="text" placeholder="Kerko per produktin..." id="search-input" />
-      <button onclick="" class="search-button">
+      <button onclick="" class="search-button" id="searchButton">
         <img src="images/search.png" alt="Search" />
       </button>
     </div>
@@ -82,15 +93,23 @@
   </header>
 
 
+  <div class="imazh-sfond">
+    <div class="sfond-container">
+      <h2>Eja Perfito nga ofertat e fundit</h2>
+      <p>Generata e re e Laptopeve Lenovo
+        realizo video, projekte grafike dhe muzikale
+        me nje laptop qe ka nje diaznj elegant dhe ato qe ofrojne laptopet e rinj...
+      </p>
+    </div>
+    <div class="img-sfond"><img src="images/imazhLaptop.jpg"></div>
+  </div>
 
-
-
-  <!-- <div id="shporta"></div>
+  <div id="shporta"></div>
   <h4>Shporta</h4>
   <p id="cmimiTotal"></p>
   <ul id="produktetNeShporte"></ul>
   </div>
-*/-->
+
 
   <table>
     <tr>
@@ -118,7 +137,84 @@
     </tr>
   </table>
 
+
+
+
+
+
+
+
+  <div class="footer">
+    <div class="footer-content">
+
+
+      <div class="footer-section social-media">
+        <h3>Rrjete sociale</h3>
+        <ul class="social-menu">
+          <li><a href="https://facebook.com/"><i class="fab fa-facebook"></i></a></li>
+          <li><a href="https://linkedin.com/"><i class="fab fa-linkedin"></i></a></li>
+          <li><a href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://instagram.com/"><i class="fab fa-instagram"></i> </a></li>
+          <li><a href="https://youtube.com/"><i class="fab fa-youtube"></i> </a></li>
+        </ul>
+        <br><br>
+        <p><a href="">Instagram </a></p>
+        <p> <a href="">Facebook </a></p>
+        <p> <a href="">You tube </a> </p>
+        <p><a href=""> Twitter </a></p>
+        <p><a href=""> Google </a></p> <br>
+
+        <h3>Payment</h3>
+        <span class="dc_payment_icons_glossy_50 dc_visa_glossy" title="Visa"></span>
+        <span class="dc_payment_icons_glossy_50 dc_mastercard_glossy" title="Mastercard"></span>
+        <span class="dc_payment_icons_glossy_50 dc_americanexpress_glossy" title="American Express"></span>
+        <span class="dc_payment_icons_glossy_50 dc_paypal_glossy" title="PayPal"></span>
+
+      </div>
+
+      <div class="footer-section information">
+        <h3> Informacion</h3>
+        <a href="Rrethnesh.html">Rreth Nesh </a>
+        <a href="">Sherbimet</a>
+        <a href="login.html">Log in</a>
+        <a href="">Termat dhe Kushtet</a>
+        <a href="">Transport</a>
+        <a href="">Lajme</a>
+        <a href="">Servisi</a>
+
+        <br>
+
+        <p><b> Merrni lajmet me te fundit </b></p>
+        <form action="/action_page.php">
+          <input type="search" placeholder="Enter your email address" id="search" name="search" required="">
+          <input type="submit" value="Sign in">
+        </form>
+
+
+      </div>
+
+      <div class="footer-section contacts">
+        <h3>Contact </h3>
+        <a href="tel:+355 69 564 763"><b>Selling Online </b><br>+355 69 564 763 </a>
+        <a href="tel:+355 68 243 476"><b> WhatsApp / Viber </b><br> +355 68 243 476</a>
+        <a href="mailto:ermalbiznes@gmail.com"><b> E-mail for info </b><br> ermalbiznes@gmail.com</a>
+        <a href="mailto:ermalbiznes@gmail.com"><b> E-mail for Dep. Online </b><br> ermalbiznes@gmail.com</a>
+        <a href="mailto:ermalbiznes@gmail.com"><b> E-mail for Complains</b><br> ermalbiznes@gmail.com</a>
+        <a href="mailto:ermalbiznes@gmail.com"><b> E-mail for Marketing </b><br> ermalbiznes@gmail.com</a>
+        <p> <b>ADDRESS:Tirane, Blvd "Gjergj Kastrioti" </b></p>
+      </div>
+
+
+    </div>
+
+    <div class="footer-bottom">
+      <b>&copy; Copyright 2020 ALBOUTFIT rights reserved created by <a href="">Albasoft </a></b>
+
+    </div>
+  </div>
   <script src="shop.js"></script>
+  <script src="main.js"></script>
+
   <script>
 
     loadItAll(); // Not needed in other than shopping
@@ -150,9 +246,11 @@
 
     window.addEventListener("scroll", function () {
       if (window.scrollY > container.offsetTop + 70) {
-        header.classList.add("fixed");
+        if (!header.classList.contains("fixed"))
+          header.classList.add("fixed");
       } else {
-        header.classList.remove("fixed");
+        if (header.classList.contains("fixed"))
+          header.classList.remove("fixed");
       }
     });
 

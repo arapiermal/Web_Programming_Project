@@ -1,0 +1,66 @@
+<html>
+
+
+
+<body>
+
+
+
+
+
+
+    <button id="myButton">Click Me</button>
+    <div id="overlay">
+        <img src="images/playstation.jpg" alt="Image">
+    </div>
+
+    <p class="styled_number">8000</p>
+    <style>
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Adjust the opacity by changing the last value (0.5) */
+            z-index: 9999;
+        }
+
+        #overlay img {
+            display: block;
+            margin: auto;
+            max-width: 80%;
+            max-height: 80%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .styled_number {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff0000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            background-color: #f7f7f7;
+            padding: 8px;
+            border-radius: 4px;
+            font-family: "Arial", sans-serif;
+        }
+    </style>
+    <script>
+        document.getElementById("myButton").addEventListener("click", function () {
+            document.getElementById("overlay").style.display = "block";
+        });
+
+
+
+    </script>
+</body>
+
+</html>
