@@ -12,6 +12,7 @@ if (document.getElementById("search-input")) {
 
 function searchFromMain() {
 	const kerkimi = document.getElementById("search-input").value;
-	window.open('Produktet.html?kerkim=' + encodeURIComponent(kerkimi));
+	window.open('/Produktet.html?kerkim=' + encodeURIComponent(kerkimi));
+
 }
 

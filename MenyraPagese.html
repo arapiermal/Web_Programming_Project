@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="payment-section">
+        <span class="text">Menyra te lehta<p> pagese!</p></span>
+        <img src="images/payment2.jpg">
+
+    </div>
+    <div class="all-info-payment">
+        <div class="carton">
+            <h2>Financim</h2>
+            <span class="text2">
+                Në Neptun, në bashkëpunim me institucionet financiare partnere, ju mund të kërkoni financim për blerjet
+                tuaja për shuma deri në 500,000 lekë dhe ti paguani me këste mujore deri në 48 muaj.</span>
+        </div>
+
+        <div class="carton">
+            <h2>Paguaj ne dyqan</h2>
+            <span class="text2">
+                Në çdo dyqan Neptun ju mund të paguani me para në dorë ose me kartë krediti apo debiti. Gjithashtu ju
+                mund të paguani në dyqanet Neptun edhe për porosite e kryera online.
+            </span>
+        </div>
+        <div class="carton">
+            <h2>Paguaj në dorëzim</h2>
+            <span class="text2">
+                Mund të porosisni online dhe pagesën mund ta kryeni me para në dorë në momentin që produkti ju vjen në
+                shtëpi. Nëse është e nevojshme, ju mundësojmë të paguani me kartë debiti ose krediti edhe në momentin e
+                dorëzimit të porosisë.
+            </span>
+        </div>
+</body>
+
+<style>
+    .all-info-payment {
+        display: flex;
+    }
+
+    .carton {
+        background-color: beige;
+        padding: 20px;
+        width: 400px;
+        text-align: center;
+        margin: 40px 60px;
+        border-top: 1px solid rebeccapurple;
+        border-left: 1px solid rebeccapurple;
+        box-shadow: 8px 5px 8px 4px rgba(0, 0, 255, .2);
+    }
+
+    .payment-section {
+        display: inline-block;
+        position: relative;
+    }
+
+    .payment-section .text p {
+        background: white;
+        position: absolute;
+        color: red;
+        top: 50%;
+        left: 70%;
+    }
+
+    .payment-section .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: white;
+        transform: translate(-50%, -50%);
+        color: #085d57;
+        font-size: 50px;
+        /* Text size */
+        z-index: 1;
+    }
+
+    .payment-section img {
+        width: 190%;
+        height: 600px;
+        opacity: 0.2;
+        z-index: 3;
+    }
+</style>
+
+</html>

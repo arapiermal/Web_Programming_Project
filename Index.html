@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE-edge" />
-<meta name="viewport" content="width-device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-<!--- Favicon ----->
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+  <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!--- Favicon ----->
 
-<link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/payment_icons/dc_payment_icons.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/payment_icons/dc_payment_icons.css" />
 
 
-<!--- Font awesome ------>
+  <!--- Font awesome ------>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/shportaAnash.css">
 
-<link rel="icon" type="image/png" href="images/star-logo.png" />
-<title>Stellar Smartphone, Tv, Notebook</title>
-<style></style>
+  <link rel="icon" type="image/png" href="images/star-logo.png" />
+  <title>Stellar Smartphone, Tv, Notebook</title>
+</head>
 
 <body>
   <div class="sub-header">
@@ -47,9 +50,9 @@
       </div>
     </div>
     <div class="search-bar">
-      <input type="text" placeholder="Kerko per produktin..." id="search-input" />
+      <input type="text" placeholder="Kerko per produktin..." id="search-input">
       <button onclick="" class="search-button" id="searchButton">
-        <img src="images/search.png" alt="Search" />
+        <img src="images/search.png" alt="Search">
       </button>
     </div>
   </div>
@@ -64,9 +67,7 @@
             <a href="Produktet.html?kategoria=Smartphone">Smartphone</a>
             <a href="Produktet.html?kategoria=Aksesore">Aksesore</a>
             <a href="Produktet.html?kategoria=Televizor">Televizor</a>
-            <a href="#">ElektroShtepiake</a>
-            <a href="#">Argetim</a>
-            <a href="#">Foto dhe Video</a>
+            <a href="Produktet.html?kategoria=Elektroshtepiake">Elektro-Shtepiake</a>
           </div>
         </li>
         <li class="dropdown">
@@ -81,23 +82,28 @@
             <a href="#">Riparime</a>
           </div>
         </li>
-        <li><a href="#">Menyra Pagese</a></li>
-        <li><a href="#">Lajme</a></li>
-        <li><a href="#">Rreth Nesh</a></li>
-        <li><a href="#">Servisi</a></li>
+        <li><a href="MenyraPagese.html">Menyra Pagese</a></li>
+        <li><a href="Lajme.html">Lajme</a></li>
+        <li><a href="RrethNesh.html">Rreth Nesh</a></li>
+        <li><a href="Servisi.html">Servisi</a></li>
       </ul>
 
     </nav>
     <ul class="shop_login">
       <li class="shopicon">
         <span><i class="fa fa-shopping-cart"></i></span>
-        <small class="count">0</small>
-        <div class="dropdown_content">
-
+        <small class="count" id="count">0</small>
+        <div class="dropdown-shporta">
+          <div id="shporta">
+            <h4>Shporta</h4>
+            <p id="cmimiTotal"></p>
+            <ul id="produktetNeShporte"></ul>
+          </div>
+          <button id="shkoBli" onclick="window.open('Shporta.html')">Shko tek blerja</button>
         </div>
       </li>
       <li class="userIcon">
-        <span><i class="fa fa-user"></i></span>
+        <span><a href="User.html"><i class="fa fa-user"></a></i></span>
       </li>
     </ul>
   </header>
@@ -129,52 +135,52 @@
 
     <div class="promotion-layout">
 
-      <div class="promotion-item">
+      <div class="promotion-item" id="k1">
         <img src="images/CategoryComputer.png" alt="" />
         <div class="promotion-content">
-          <h3>COMPUTER</h3>
-          <a href="">SHOP NOW</a>
+          <h3>KOMPJUTER</h3>
+          <a href="Produktet.html?kategoria=Kompjuter">SHOP NOW</a>
         </div>
       </div>
 
-      <div class="promotion-item">
+      <div class="promotion-item" id="k2">
         <img src="images/CategoryAccess.png" alt="" />
         <div class="promotion-content">
-          <h3>Accessories</h3>
-          <a href="">SHOP NOW</a>
+          <h3>AKSESORE</h3>
+          <a href="Produktet.html?kategoria=Aksesore">SHOP NOW</a>
         </div>
       </div>
 
 
-      <div class="promotion-item">
+      <div class="promotion-item" id="k3">
         <img src="images/CategoryNoteb.png" alt="">
         <div class="promotion-content">
-          <h3>NOTEBOOK</h3>
-          <a href="">SHOP NOW</a>
+          <h3>LAPTOP</h3>
+          <a href="Produktet.html?kategoria=Laptop">SHOP NOW</a>
         </div>
       </div>
 
-      <div class="promotion-item">
+      <div class="promotion-item" id="k4">
         <img src="images/CategorySmartphone.png" alt="" />
         <div class="promotion-content">
           <h3>SMARTPHONE</h3>
-          <a href="">SHOP NOW</a>
+          <a href="Produktet.html?kategoria=Smartphone">SHOP NOW</a>
         </div>
       </div>
 
-      <div class="promotion-item">
+      <div class="promotion-item" id="k5">
         <img src="images/CategoryTelev.png" alt="" />
         <div class="promotion-content">
-          <h3>TELEVISION</h3>
-          <a href="">SHOP NOW</a>
+          <h3>TELEVIZION</h3>
+          <a href="Produktet.html?kategoria=Televizor">SHOP NOW</a>
         </div>
       </div>
 
-      <div class="promotion-item">
-        <img src="images/CategoryArgetim.png" alt="" />
+      <div class="promotion-item" id="k6">
+        <img src="images/CategoryElektroshtepiake.png" alt="" />
         <div class="promotion-content">
-          <h3>ENTERTAINMENT</h3>
-          <a href="">SHOP NOW</a>
+          <h3>ELEKTRO-SHTEPIAKE</h3>
+          <a href="Produktet.html?kategoria=Elektroshtepiake">SHOP NOW</a>
         </div>
       </div>
 
@@ -185,10 +191,10 @@
   <div class="hero">
     <img src="images/Ecommerce.jpg">
     <div class="left">
-      <span>Exclusive Sales</span>
-      <h1>UP TO 30% OFF ON SALES</h1>
-      <small>Get all exclusive offers for the season</small>
-      <a href="">Shikoni Produktet</a>
+      <span>Shitje Ekskluzive</span>
+      <h1>ULJE DERI NE 30% NE STELLAR</h1>
+      <small>Perfitoni Oferta Eksluzive Per Kete Sezon</small>
+      <a href="Produktet.html">Shikoni Produktet</a>
     </div>
   </div>
 
@@ -295,7 +301,7 @@
         <div class="content left">
           <span>Koleksioni i Ri Veror</span>
           <p>Laptopat Gaming Me Te Fundit </p>
-          <a href="">Shikoni Koleksionin</a>
+          <a href="Produktet.html?kategoria=Laptop">Shikoni Koleksionin</a>
         </div>
         <img src="images/Collection1.jpg" alt="" />
       </div>
@@ -414,7 +420,7 @@
     </div>
 
     <div class="footer-bottom">
-      <b>&copy; Copyright 2020 ALBOUTFIT rights reserved created by <a href="">Albasoft </a></b>
+      <b>&copy; Copyright 2023 Te gjitha te drejtat e rezervuara nga <a href="">Stellar-Comp </a></b>
 
     </div>
   </div>
@@ -424,11 +430,13 @@
 
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<!--<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>-->
+<script src="swiper-bundle.min.js"></script>
+<script src="shop.js"></script>
 <script src="main.js"></script>
 
 <script>
-
+  loadShportaFromLocalStorage();
   const container = document.querySelector(".container");
   const header = document.querySelector("header");
 
@@ -480,7 +488,6 @@
   }
 
   window.addEventListener('scroll', checkVisibility);
-
 
 </script>
 

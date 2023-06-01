@@ -1,0 +1,22 @@
+#produktetNeShporte li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.hiqNgaShporta {
+    background-color: #ff0000;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 5px;
+
+}
+
+#shkoBli {
+    background-color: green;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    margin: 5px;
+
+}

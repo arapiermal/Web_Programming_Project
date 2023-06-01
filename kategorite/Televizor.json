@@ -1,12 +1,17 @@
 [
   {
     "id": 5000,
-    "name": "Samsung TV 8k",
-    "price": 80000
+    "name": "TV SAMSUNG QE75QN900CTXXH",
+    "price": 84900
   },
   {
     "id": 5001,
-    "name": "LG TV 4k",
-    "price": 90000
+    "name": "TV SAMSUNG QE85Q70BATXXH",
+    "price": 39990
+  },
+  {
+    "id": 5002,
+    "name": "TV SAMSUNG QE85Q60CAUXXH",
+    "price": 37990
   }
 ]

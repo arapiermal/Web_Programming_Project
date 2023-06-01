@@ -75,9 +75,9 @@ tr .produkt {
     position: relative;
     border: 1px solid #ccc;
     border-radius: 5%;
-    padding: 50px 10px 5px 10px;
+    padding: 70px 10px 5px 10px;
     width: 221px;
-    height: 329px;
+    height: 369px;
     display: inline-block;
     vertical-align: top;
     margin: 30px 0px 30px 30px;
@@ -104,7 +104,7 @@ tr .produkt {
 
 .produkt .perButonat .shikoMeTeper {
     position: absolute;
-    top: 236px;
+    top: 266px;
     left: 25%;
     display: flex;
     text-align: center;
@@ -141,7 +141,7 @@ img:hover {
     left: 5%;
     right: 5%;
     background: #fff2f2;
-    top: 205px;
+    top: 235px;
 }
 
 td:nth-child(1) #kerko input[type="text"] {
@@ -245,8 +245,6 @@ img {
     background: #bababa;
     color: #004359;
 }
-
-
 
 
 

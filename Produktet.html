@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE-edge" />
-<meta name="viewport" content="width-device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
-<!--- Favicon ----->
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+  <meta name="viewport" content="width-device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <!--- Favicon ----->
 
-<link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/payment_icons/dc_payment_icons.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="http://cdn.dcodes.net/2/payment_icons/dc_payment_icons.css" />
 
 
-<!--- Font awesome ------>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!--- Font awesome ------>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/shop.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/shop.css">
+  <link rel="stylesheet" type="text/css" href="/css/shportaAnash.css">
 
-<link rel="icon" type="image/png" href="images/star-logo.png" />
-<title>Stellar Smartphone, Tv, Notebook</title>
+  <link rel="icon" type="image/png" href="images/star-logo.png" />
+  <title>Stellar Smartphone, Tv, Notebook</title>
 
+</head>
 
 <body>
   <div class="sub-header">
@@ -67,9 +71,7 @@
             <a href="Produktet.html?kategoria=Smartphone">Smartphone</a>
             <a href="Produktet.html?kategoria=Aksesore">Aksesore</a>
             <a href="Produktet.html?kategoria=Televizor">Televizor</a>
-            <a href="#">ElektroShtepiake</a>
-            <a href="#">Argetim</a>
-            <a href="#">Foto dhe Video</a>
+            <a href="Produktet.html?kategoria=Elektroshtepiake">Elektro-Shtepiake</a>
           </div>
         </li>
         <li class="dropdown">
@@ -84,12 +86,29 @@
             <a href="#">Riparime</a>
           </div>
         </li>
-        <li><a href="#">Menyra Pagese</a></li>
-        <li><a href="#">Lajme</a></li>
-        <li><a href="#">Rreth Nesh</a></li>
-        <li><a href="#">Servisi</a></li>
+        <li><a href="MenyraPagese.html">Menyra Pagese</a></li>
+        <li><a href="Lajme.html">Lajme</a></li>
+        <li><a href="RrethNesh.html">Rreth Nesh</a></li>
+        <li><a href="Servisi.html">Servisi</a></li>
       </ul>
     </nav>
+    <ul class="shop_login">
+      <li class="shopicon">
+        <span><i class="fa fa-shopping-cart"></i></span>
+        <small class="count" id="count">0</small>
+        <div class="dropdown-shporta">
+          <div id="shporta">
+            <h4>Shporta</h4>
+            <p id="cmimiTotal"></p>
+            <ul id="produktetNeShporte"></ul>
+          </div>
+          <button id="shkoBli" onclick="window.open('Shporta.html')">Shko tek blerja</button>
+        </div>
+      </li>
+      <li class="userIcon">
+        <span><a href="User.html"><i class="fa fa-user"></a></i></span>
+      </li>
+    </ul>
   </header>
 
 
@@ -101,15 +120,8 @@
         me nje laptop qe ka nje diaznj elegant dhe ato qe ofrojne laptopet e rinj...
       </p>
     </div>
-    <div class="img-sfond"><img src="images/imazhLaptop.jpg"></div>
+    <div class="img-sfond"><img src="images/imazhLaptop.jpg" id="imazhKategorie"></div>
   </div>
-
-  <div id="shporta"></div>
-  <h4>Shporta</h4>
-  <p id="cmimiTotal"></p>
-  <ul id="produktetNeShporte"></ul>
-  </div>
-
 
   <table>
     <tr>
@@ -208,7 +220,7 @@
     </div>
 
     <div class="footer-bottom">
-      <b>&copy; Copyright 2020 ALBOUTFIT rights reserved created by <a href="">Albasoft </a></b>
+      <b>&copy; Copyright 2023 Te gjitha te drejtat e rezervuara nga <a href="">Stellar-Comp </a></b>
 
     </div>
   </div>
@@ -222,9 +234,17 @@
 
     function filterProducts(minPrice, maxPrice) {
       let produkteTeFiltruara = [];
-      for (let i = 0; i < produkte.length; i++) {
-        if (produkte[i].price >= minPrice && produkte[i].price <= maxPrice)
-          produkteTeFiltruara.push(produkte[i]);
+      if (gjitheProduktet.length === 0) {
+        for (let i = 0; i < produkte.length; i++) {
+          if (produkte[i].price >= minPrice && produkte[i].price <= maxPrice)
+            produkteTeFiltruara.push(produkte[i]);
+        }
+      }
+      else {
+        for (let i = 0; i < gjitheProduktet.length; i++) {
+          if (gjitheProduktet[i].price >= minPrice && gjitheProduktet[i].price <= maxPrice)
+            produkteTeFiltruara.push(gjitheProduktet[i]);
+        }
       }
       return produkteTeFiltruara;
     }

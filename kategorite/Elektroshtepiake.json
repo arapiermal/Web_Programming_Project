@@ -1,0 +1,17 @@
+[
+    {
+        "id": 6000,
+        "name": "BEKO",
+        "price": 10000
+    },
+    {
+        "id": 6001,
+        "name": "NOT YET",
+        "price": 20700
+    },
+    {
+        "id": 6002,
+        "name": "NOT YET",
+        "price": 20700
+    }
+]

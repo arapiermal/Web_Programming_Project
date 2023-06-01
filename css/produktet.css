@@ -1,0 +1,97 @@
+#produkt_details {
+    display: flex;
+    margin-top: 35px;
+}
+
+/* Single Product */
+#produkt_details .single-Image {
+    width: 40%;
+    margin-right: 50px;
+}
+
+.small-images {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-imageCol {
+    flex-basis: 24%;
+}
+
+.small-img {
+    width: 100%;
+    transition: opacity 200ms ease-in-out;
+    cursor: pointer;
+    padding: 5px 5px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+}
+
+.singleDetails {
+    width: 40%;
+    padding-top: 40px;
+}
+
+.singleDetails h4 {
+    padding: 40px 0 10px 0;
+}
+
+.singleDetails h2 {
+    font-size: 26px;
+    margin: 10px 0px;
+    color: red;
+}
+
+.singleDetails select {
+    display: block;
+    padding: 6px 14px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.singleDetails #add {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 25px;
+    background-color: rgb(25, 79, 179);
+    border: none;
+    border-radius: 5px;
+}
+
+.singleDetails #add:hover {
+    background-color: rgb(248, 86, 41);
+}
+
+.singleDetails span {
+    line-height: 25px;
+}
+
+#shikoSpecifikat {
+    margin: 5px 0px;
+}
+
+#shikoSpecifikat h3 {
+    font-size: 22px;
+    margin: 30px 10px;
+}
+
+#shikoSpecifikat p {
+    background: #ccc;
+    font-weight: bold;
+    width: 100%;
+    padding: 6px 10px;
+}
+
+#shikoSpecifikat h4 {
+    margin: 20px 10px;
+}
+
+#shikoSpecifikat h4 pre {
+    padding: 4px;
+    margin: 15px 20px;
+}
+
+#shikoSpecifikat h4 pre:hover {
+    background: #ccc;
+}
