@@ -1,0 +1,47 @@
+.all-info-payment {
+    display: inline-block;
+}
+
+.carton {
+    display: inline-block;
+    vertical-align: top;
+    background-color: beige;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    margin: 40px 51px;
+    border-top: 1px solid rebeccapurple;
+    border-left: 1px solid rebeccapurple;
+    box-shadow: 8px 5px 8px 4px rgba(0, 0, 255, .2);
+}
+
+.payment-section {
+    display: inline-block;
+    position: relative;
+}
+
+.payment-section .text p {
+    background: white;
+    position: absolute;
+    color: red;
+    top: 120%;
+    left: 70%;
+}
+
+.payment-section .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #085d57;
+    font-size: 50px;
+    /* Text size */
+    z-index: 0;
+}
+
+.payment-section img {
+    width: 190%;
+    height: 600px;
+    opacity: 0.2;
+    z-index: 3;
+}

@@ -1,0 +1,62 @@
+body {
+    background: url(/images/background2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container2 {
+    box-sizing: border-box;
+    width: 50%;
+    height: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+.container2 h2 {
+    text-align: center;
+}
+
+.container2 h3 {
+    text-align: center;
+    color: rgb(177, 5, 5);
+}
+
+.container2 h2 img {
+    width: 40px;
+    height: 40px;
+}
+
+.container2 form input {
+    display: block;
+    margin: 20px 0px;
+    transform: translate(50%);
+    width: 52%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container2 form button {
+    width: 52%;
+    padding: 10px;
+    transform: translate(50%);
+    background-color: #f3c717;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container2 form button:hover {
+    background-color: #cea501;
+}
+
+#message {
+    margin-top: 10px;
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
