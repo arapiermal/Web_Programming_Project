@@ -1,17 +1,17 @@
 [
     {
         "id": 6000,
-        "name": "BEKO",
-        "price": 10000
+        "name": "FURRE BEKO BIE25400XM",
+        "price": 48990
     },
     {
         "id": 6001,
-        "name": "NOT YET",
-        "price": 20700
+        "name": "FRIGORIFER BOSCH KAD93VBFP",
+        "price": 100700
     },
     {
         "id": 6002,
-        "name": "NOT YET",
+        "name": "MIKROVALE BEKO MOB20231BG",
         "price": 20700
     }
 ]
