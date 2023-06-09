@@ -12,12 +12,12 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#">Rreth Nesh</a></li>
+                <li><a href="#about">Rreth Nesh</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="about">
+    <section id="about">
         <h1>Rreth Nesh</h1>
         <p>Website-i i tregtisë elektronike Stellar është një platformë online që ofron një gamë të gjerë të produkteve
             për shitje.
@@ -85,12 +85,19 @@
         text-decoration: none;
     }
 
-    .about {
-        max-width: 600px;
+    #about {
+        max-width: 1000px;
         height: 600px;
         margin: 0 auto;
         padding: 40px;
         text-align: justify;
+    }
+
+    #about h1 {
+        border-bottom: 2px solid orange;
+        padding: 10px 0px;
+        text-align: center;
+        margin-bottom: 10px;
     }
 
     footer {

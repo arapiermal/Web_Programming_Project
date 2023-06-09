@@ -7,14 +7,14 @@ class Produkt {
     }
 }
 //WARNING
-const categories = ['Kompjuter', 'Laptop', 'Smartphone', 'Aksesore', 'Televizor'];
+const categories = ['Kompjuter', 'Laptop', 'Smartphone', 'Aksesore', 'Televizor', 'Elektroshtepiake'];
 let produkte = [];
 /////////////////////////
 let gjitheProduktet = []; //filter for ?search
 /////////////////////////
 
 function loadProducts(category) {
-    return fetch('kategorite/' + category + '.json')
+    return fetch('/kategorite/' + category + '.json')
         .then(response => response.json())
         .then(data => {
             //WARNING
@@ -116,7 +116,7 @@ function showProducts(produkte) {
         pImage.classList.add('imazhProdukti');
         //Imazhi si link
         pImage.addEventListener('click', function () {
-            window.open('kategorite/' + produkt.category + '/' + produkt.name + '.html', '_blank');
+            window.open('/kategorite/' + produkt.category + '/' + produkt.name + '.html', '_blank');
         });
         pContainer.appendChild(pImage);
 
@@ -125,7 +125,7 @@ function showProducts(produkte) {
         pContainer.appendChild(pName);
 
         const pPrice = document.createElement('p1');
-        pPrice.textContent = produkt.price + ' Leke';
+        pPrice.textContent = cmimiString(produkt.price) + ' Leke';
         pContainer.appendChild(pPrice);
 
         const pbDiv = document.createElement('div');
@@ -136,7 +136,7 @@ function showProducts(produkte) {
         linkButton.textContent = 'Shiko me teper';
         linkButton.classList.add('shikoMeTeper');
         linkButton.addEventListener('click', () => {
-            window.open('kategorite/' + produkt.category + '/' + produkt.name + '.html', '_blank');
+            window.open('/kategorite/' + produkt.category + '/' + produkt.name + '.html', '_blank');
         });
         pbDiv.appendChild(linkButton);
 
@@ -152,7 +152,9 @@ function showProducts(produkte) {
         addButton.setAttribute('data-id', produkt.id); // Attach the id as a data attribute
         addButton.addEventListener('click', () => {
             shtoNeShporte(produkt.id);
+
         });
+
         pbDiv.appendChild(addButton);
         pContainer.appendChild(pbDiv);
 
@@ -199,6 +201,7 @@ function loadItAll() {
             categoryTitle.textContent += category;
             loadProducts(category)
                 .then(produkte => {
+                    loadBannerKategori(category);
                     showProducts(produkte);
                 })
                 .catch(error => {
@@ -220,8 +223,11 @@ function loadItAll() {
         searchNewTab(''); //cheat code
     }
 }
-
-
+function loadBannerKategori(kat) {
+    if (document.getElementById('imazhKategorie')) {
+        document.getElementById('imazhKategorie').src = 'imagesShop/' + kat + '.jpg';
+    }
+}
 
 //SHPORTA
 
@@ -237,6 +243,9 @@ let shporta = [];
 let totalPrice = 0;
 ////////////////////////////
 function shtoNeShporte(id) {
+    if (shporta.length >= 5) {
+        return;
+    }
     //Problem solved, but efficiency a bit down, isShopping, isCategory and isSearching booleans?
     const produktShporte = (gjitheProduktet.length < 1) ? produkte.find(produkt => produkt.id === id) : gjitheProduktet.find(produkt => produkt.id === id);
     if (produktShporte) {
@@ -265,7 +274,7 @@ function updateShporta() {
     //shtojme produktet
     shporta.forEach(item => {
         const listItem = document.createElement('li');
-        listItem.textContent = item.name + ' - ' + item.price;
+        listItem.textContent = item.name + ' - ' + cmimiString(item.price);
 
         const removeButton = document.createElement('button');
         removeButton.textContent = 'Hiq nga shporta';
@@ -286,6 +295,7 @@ function updateShporta() {
         totalPrice += item.price;
     }
     totalPriceElement.textContent = 'TOTALI: ' + totalPrice.toFixed(2) + ' LEK';
+    setCountShporta();
 }
 
 //button shto ne shporte on clicked  .....
@@ -298,8 +308,41 @@ function loadShportaFromLocalStorage() {
     const shportaRuajtur = localStorage.getItem('shporta');
     if (shportaRuajtur) {
         shporta = JSON.parse(shportaRuajtur);
-        updateShporta();
+        if (document.getElementById('shporta')) {
+            updateShporta();
+        }
+    }
+}
+//loadShportaFromLocalStorage();
+//
+
+///////////////////////
+
+function setCountShporta() {
+    if (document.getElementById('count')) {
+        document.getElementById('count').innerHTML = '' + shporta.length;
     }
 }
 
-//
+function cmimiString(b) {
+    const separator = ",";
+    let s = b.toString().replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+    return s;
+}
+
+function shfletimProdukti(id) {
+    loadAllProducts();
+    const addButton = document.getElementById('add');
+    addButton.addEventListener('click', () => {
+        shtoNeShporte(id);
+    });
+}
+
+
+function shfletimProdukti(kat, id) {
+    loadProducts(kat);
+    const addButton = document.getElementById('add');
+    addButton.addEventListener('click', () => {
+        shtoNeShporte(id);
+    });
+}
